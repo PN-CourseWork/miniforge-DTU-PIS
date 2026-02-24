@@ -63,11 +63,6 @@ virtual_specs:
   - __glibc >=2.17 # [linux]
   - __osx >=10.13 # [osx]
 
-# Protect base environment from modifications
-freeze_base:
-  conda:
-    message: "This base environment is frozen and cannot be modified."
-
 extra_envs:
     
   # Math 1 course environment
