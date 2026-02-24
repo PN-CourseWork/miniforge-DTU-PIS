@@ -21,7 +21,7 @@ Customized [Miniforge3](https://github.com/conda-forge/miniforge) installers for
 **Miniforge3**
 
 ```sh
-curl -fLo Miniforge3.sh "https://github.com/PN-CourseWork/miniforge-DTU-PIS/releases/latest/download/Miniforge3-$(uname -s)-$(uname -m).sh" && bash Miniforge3.sh -bc && rm -f Miniforge3.sh
+curl -fLo Miniforge3.sh "https://github.com/PN-CourseWork/miniforge-DTU-PIS/releases/latest/download/Miniforge3-$(uname -s)-$(uname -m).sh" && bash Miniforge3.sh -bc && rm -f Miniforge3.sh 
 ```
 
 **VS Code**

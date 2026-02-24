@@ -62,3 +62,32 @@ specs:
 virtual_specs:
   - __glibc >=2.17 # [linux]
   - __osx >=10.13 # [osx]
+
+extra_envs:
+  # Base environment for 1st/2nd semester - frozen packages
+  base-semester:
+    specs:
+      - python 3.12.*
+      - dtumathtools
+      - uncertainties
+      - statsmodels
+      - scipy
+    
+  # Math 1 course environment
+  math1:
+    specs:
+      - python 3.12.*
+      - dtumathtools
+  
+  # Statistics course environment
+  statistics:
+    specs:
+      - python 3.12.*
+      - statsmodels
+      - dtumathtools
+  
+  # Physics course environment
+  physics:
+    specs:
+      - python 3.12.*
+      - uncertainties

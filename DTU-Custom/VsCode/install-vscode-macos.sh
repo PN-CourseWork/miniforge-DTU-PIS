@@ -32,32 +32,8 @@ install_vscode() {
     mv "/tmp/Visual Studio Code.app" "/Applications/"
     rm -f /tmp/VSCode.zip
 
-    create_code_symlink
 }
 
-create_code_symlink() {
-    local vscode_bin
-    vscode_bin="/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code"
-
-    if command -v code >/dev/null 2>&1; then
-        return 0
-    fi
-
-    if [[ "${DTU_ENV:-}" == "CI" ]]; then
-        mkdir -p "$HOME/bin" 2>/dev/null || true
-        ln -sf "$vscode_bin" "$HOME/bin/code" 2>/dev/null || true
-        export PATH="$HOME/bin:$PATH"
-    elif [[ "${CLI_MODE:-}" == "true" ]]; then
-        sudo mkdir -p /usr/local/bin
-        sudo ln -sf "$vscode_bin" /usr/local/bin/code
-        export PATH="/usr/local/bin:$PATH"
-    else
-        osascript -e "do shell script \"mkdir -p /usr/local/bin && ln -sf '$vscode_bin' /usr/local/bin/code\" with prompt \"DTU setup needs admin rights to configure the VS Code CLI tool.\" with administrator privileges"
-        export PATH="/usr/local/bin:$PATH"
-    fi
-
-    echo "VS Code CLI symlink created."
-}
 
 install_extensions() {
     local code_cli
