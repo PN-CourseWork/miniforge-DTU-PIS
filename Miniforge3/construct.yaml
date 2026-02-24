@@ -34,7 +34,7 @@ post_install: post_install.sh  # [unix]
 post_install: post_install.bat  # [win]
 
 user_requested_specs:
-  - python 3.12.*
+  - python 3.11.*
   - conda >={{ version.split("-")[0] }}
   - mamba >={{ mamba_version }}
   - pip
